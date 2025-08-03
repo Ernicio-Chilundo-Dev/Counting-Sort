@@ -50,3 +50,25 @@ void countingSort(int arr[], int n)
     free(count);
 }
 
+int main(void)
+{
+    int arr[] = {4, 2, 2, 8, 3, 3, 1};
+    int n = sizeof(arr) / sizeof(arr[0]);
+
+    printf("Original array: ");
+    for (int i = 0; i < n; i++)
+    {
+        printf("%d ",arr[i]);
+    }
+    printf("\n");
+
+    countingSort(arr, n);
+
+    // Sorted array
+    printf("Sorted array: ");
+    for (int i = 0; i < n; i++)
+    {
+        printf("%d ",arr[i]);
+    }
+    printf("\n");
+}
