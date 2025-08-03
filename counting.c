@@ -28,4 +28,25 @@ void countingSort(int arr[], int n)
         printf("Memory allocation failed!\n");
         return;
     }
+
+    // Count occurrences
+    for (int i = 0; i < n; i++)
+    {
+        count[arr[i]]++;
+    }
+
+    // Reconstruct the sorted array
+    int index = 0;
+    for (int i = 0; i <= max; i++)
+    {
+        while (count[i] > 0)
+        {
+            arr[index++] = i;
+            count[i]--;
+        }
+    }
+
+    // Free allocated memory
+    free(count);
 }
+
